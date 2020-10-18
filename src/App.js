@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext } from 'react';
 import './App.css';
+import TaskContextProvider from './components/TaskContextProvider';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
+export const userContext = createContext()
 
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <TaskContextProvider>
+      <div className='wholesome'>
+    <div className='all-tasks'>
+    <h1>My TO-DO List</h1>
+      <TaskForm/>
+      <TaskList/>
     </div>
+    </div>
+    </TaskContextProvider>
   );
 }
 
